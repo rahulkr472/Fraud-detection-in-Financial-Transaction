@@ -1,4 +1,4 @@
-# Fraud-detection-in-Financial-Transaction
+# Fraud detection in Financial Transaction
 
 – Analyzed 5,000+ financial transactions using advanced SQL queries to detect fraud based on device type, location,
 transaction type, and country risk indicators.
