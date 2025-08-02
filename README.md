@@ -7,7 +7,7 @@ transaction type, and country risk indicators.
 classification.
 
 – Built an interactive Power BI dashboard with KPIs (Fraud Count, Fraud percentage and Total Transactions) and slicers
-for Country, Device, Merchant, and Transaction Type.
+for Location, Device, Merchant, and Transaction Type.
 
 – Presented actionable insights through data storytelling, helping stakeholders visualize fraud hotspots and improve risk
 management strategies.
