@@ -15,7 +15,7 @@ management strategies.
 
 # Power BI Dashboard
 
-[DashBoard](Dashboard.png)
+![DashBoard](Dashboard.png)
 
 # SQL
 
