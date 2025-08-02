@@ -10,6 +10,9 @@ for Country, Device, Merchant, and Transaction Type.
 management strategies.
 
 
+# Power BI Dashboard
+
+
 # SQL
 
 Sql Business problem Solution 
@@ -18,7 +21,8 @@ Section 1: Basic Understanding
 
 Q1. Total number of transactions and customers
 
-```select 
+```
+select 
      count(*) as total_transaction , 
      count(distinct customer_id) as total_cust
 from fraud_data;
@@ -26,7 +30,8 @@ from fraud_data;
 Q2. Number of fraud vs non-fraud transactions
 
 
-```select 
+```
+select 
    Fraud_Flag ,
    count(*) as total_tansactions
 from fraud_data
@@ -36,7 +41,8 @@ order by 2 desc;
 
 Q3. Average transaction amount (fraud vs non-fraud)
 
-```select 
+```
+select 
     Fraud_Flag,
     round(avg(Amount) , 2) as avg_transaction_amount
 from fraud_data
@@ -49,7 +55,8 @@ Section 2: Fraud by Geography & Device
 
 Q4. Top 5 locations with most fraud
 
-```select location, count(*) as Fraud_count
+```
+select location, count(*) as Fraud_count
 from fraud_data
 where fraud_flag = "Fraud"
 group by 1
@@ -59,7 +66,8 @@ limit 5;
 
 Q5. Devices used in most fraudulent transactions
 
-```select Device, count(*) as Fraud_count
+```
+select Device, count(*) as Fraud_count
 from fraud_data
 where fraud_flag = "Fraud"
 group by Device
@@ -70,7 +78,8 @@ Section 3: International & High-Risk Transactions
 
 Q6. Fraud % in international transactions
 
-```select 
+```
+select 
      is_international,
      count(*) as total_transaction,
      sum(case when fraud_flag = 'Fraud' then 1 else 0 End) as fraud_count,
@@ -81,7 +90,8 @@ group by 1;
 
 Q7. High-risk city fraud comparison
 
-```select
+```
+select
      is_highrisk_country,
      sum(case when fraud_flag = 'Fraud' then 1 else 0 End) as fraud_transaction,
      count(*) as total_transaction,
@@ -94,7 +104,8 @@ Section 4: Temporal Analysis
 
 Q8. Fraud trend by month
 
-```select 
+```
+select 
      month(transaction_date),
      monthname(transaction_date),
      count(*) as total_transaction,
@@ -106,7 +117,8 @@ order by 1;
 
 Q9. Time of day with most fraud (Morning/Afternoon/Evening/Night)
 
-```select 
+```
+select 
      case when hour(transaction_time) >= 5 and  hour(transaction_time) < 12 then "Morning" 
           when hour(transaction_time) >= 12 and hour(transaction_time) <= 17 then "Afternoon"
           when hour(transaction_time) > 17 and hour(transaction_time) <= 22 then "Evening"
@@ -126,7 +138,8 @@ Section 5: Merchant & Transaction Type
 
 Q10. Merchants with highest fraud counts
 
-```select merchant, count(*) as fraud_count
+```
+select merchant, count(*) as fraud_count
 from fraud_data
 where fraud_flag = "Fraud"
 group by merchant
@@ -135,7 +148,8 @@ order by 2 desc;
 
 Q11. Fraud rate by transaction type
 
-```select 
+```
+select 
    transaction_type, 
    count(*) as total_transaction,
    sum(case when fraud_flag = "fraud" then 1 else 0 end) as fraud_count,
@@ -151,7 +165,8 @@ Section 6: Risk Profiling
 
 Q12. Customers with more than 3 frauds
 
-```select customer_id, count(*) as customer_count
+```
+select customer_id, count(*) as customer_count
 from fraud_data
 where fraud_flag = "fraud"
 group by 1
@@ -160,7 +175,8 @@ having count(*) > 3;
 
 Q13. Transactions over ₹5000 that are fraudulent 
 
-```select *
+```
+select *
 from fraud_data
 where fraud_flag = "fraud" and Amount > 5000;
 ```
