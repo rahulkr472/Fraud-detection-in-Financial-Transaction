@@ -2,16 +2,20 @@
 
 – Analyzed 5,000+ financial transactions using advanced SQL queries to detect fraud based on device type, location,
 transaction type, and country risk indicators.
+
 – Identified high-risk patterns such as international transactions from flagged countries and built logic for fraud score
 classification.
+
 – Built an interactive Power BI dashboard with KPIs (Fraud Count, Fraud percentage and Total Transactions) and slicers
 for Country, Device, Merchant, and Transaction Type.
+
 – Presented actionable insights through data storytelling, helping stakeholders visualize fraud hotspots and improve risk
 management strategies.
 
 
 # Power BI Dashboard
 
+[DashBoard](Dashboard.png)
 
 # SQL
 
